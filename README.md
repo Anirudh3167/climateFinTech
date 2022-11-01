@@ -2,6 +2,6 @@
 
 # About
 
-#Contribution guidelines
+# Contribution guidelines
 
-#Team members
+# Team members
