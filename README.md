@@ -28,7 +28,7 @@ climateTech focuses on the carbon footprint reduction by generating a carbon foo
 to reduce carbon emissions, cost effective and best among the rest.
 
 # Contribution guidelines
-Check out the [contribution guidelines](https://github.com/Anirudh3167/contribution.md)
+Check out the [contribution guidelines](https://github.com/Anirudh3167/climateFinTech/blob/main/Contribution.md)
 
 # Team members
 
