@@ -1,4 +1,4 @@
-# Contribution guidelines.
+# Contribution.
 
 ## Git bash
  
