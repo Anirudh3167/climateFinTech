@@ -32,7 +32,7 @@ Check out the [contribution guidelines](https://github.com/Anirudh3167/climateFi
 
 # Team members
 
-1. Anirudh ( backend, documentation and management )
-2. Lakshay ( Frontend )
-3. Ankush ( Frontend )
-4. Abhinav ( Frontend )
+1. [Anirudh](https://github.com/Anirudh3167) ( backend, documentation and management )
+2. [Lakshay](https://github.com/Lakshay011235) ( Frontend )
+3. [Ankush](https://github.com/AnkushS27) ( Frontend )
+4. [Abhinav](https://github.com/Abhip2109) ( Frontend )
