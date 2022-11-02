@@ -30,3 +30,19 @@ To get data from repository
 
 ## Format
 
+#### CSS
+1. Class name should be in camelCase.
+2. Some basic things like core color code and dimensions will be in variables.
+3. Separate folder for css and css variables initialisation.
+
+#### HTML
+1. Page should be formatted properly with opening and closing tags on same line.
+2. In some cases where the variables needs to be changed. It is done by inline css.
+3. Everything should be in flex boxes.
+4. Jinja tags will be used to reduce code redundancy and simplify backend work. 
+
+#### JAVASCRIPT
+1. Written in seperate pages.
+
+#### Django
+1. Functions made should be in camelCase along with their names and path.
