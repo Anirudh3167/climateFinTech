@@ -17,9 +17,9 @@ That's it. All set! Time to code😀!
 ## Git bash
 To push data from local folder to repository.
 
-Do `git add .`
-Then `git commit -m "message"`
-Then `git push`
+Do `git add .` 
+Then `git commit -m "message"` 
+Then `git push` 
 
 To get data from repository
 
