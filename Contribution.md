@@ -1,8 +1,8 @@
 # Contribution.
 
 ## Git bash
- 
-Fork this repository.
 
+Fork this repository.
+ `git add .`
 ## Format
 
