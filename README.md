@@ -24,8 +24,15 @@ Also, apart from this a negative balance will also be there upto 0-5$ so that sm
 The negative balance scale will depend on how much active the user is(both payment and presence wise).
 
 ## Climate tech:-
-  Not prepared yet.
+climateTech focuses on the carbon footprint reduction by generating a carbon footprint report with some suggestions of eco friendly products which are intended
+to reduce carbon emissions, cost effective and best among the rest.
 
 # Contribution guidelines
+Check out the [contribution guidelines](https://github.com/Anirudh3167/Contribution.md)
 
 # Team members
+
+1. Anirudh ( backend, documentation and management )
+2. Lakshay ( Frontend )
+3. Ankush ( Frontend )
+4. Abhinav ( Frontend )
