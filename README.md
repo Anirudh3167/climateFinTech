@@ -31,7 +31,7 @@ to reduce carbon emissions, cost effective and best among the rest.
 Check out the [contribution guidelines](https://github.com/Anirudh3167/climateFinTech/blob/main/Contribution.md)
 
 # Usage guidelines
-Check out the [usage guidelines](https://github.com/Anirudh3167/blob/mainclimateFinTech/Usage.md)
+Check out the [usage guidelines](https://github.com/Anirudh3167/climateFinTech/blob/main/Usage.md)
 
 # Team members
 
