@@ -25,6 +25,10 @@
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
         {% include "navbar.html" %}
+        {% for i in name %}
+        {{ i }} <br>
+        {{ id }}<br>
+        {% endfor %}
         <h1>This is a trail page.</h1>
         {% include "footer.html" %}
         <script src="" async defer></script>
