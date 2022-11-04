@@ -36,7 +36,7 @@ In-order to run your jinja code. Edit it in templates\sample_<your_name>.html
 Then runserver and goto https://127.0.0.1:8000/<your_name> to see its working.
 
 Still getting confused to check your link.
-Do visit [smaples.md](https://github.com/Anirudh3167/climateFinTech/blob/main/Usage.md)
+Do visit [smaples.md](https://github.com/Anirudh3167/climateFinTech/blob/main/samples.md)
 ## Format
 
 #### CSS
