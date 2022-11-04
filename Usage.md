@@ -1,10 +1,18 @@
 # Usage
 
-## Django usage
-Open your command prompt.
+Run the [commander batch file] (https://github.com/Anirudh3167/climateFinTech/blob/main/commander.bat).
 
-Navigate to the place where your projects is stored.( where you can see .git and climateFinTech folders)
+## For git commands:-
 
-then `cd climateFinTech/ClimateFinTech`
+type `git`
 
-then `python manage.py runserver`
+then `auto`
+
+## For django commands:-
+
+type `django`
+
+then `auto`
+
+## Cheat commands of commander.bat:-
+django ---> server  (To run the server)
