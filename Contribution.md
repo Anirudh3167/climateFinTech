@@ -30,7 +30,7 @@ To get data from repository
 
 ## For non django contributers:-
 i.e. Frontend guys.
-please read the [usage.md] (https://github.com/Anirudh3167/climateFinTech/blob/main/Usage.md)
+please read the [usage.md](https://github.com/Anirudh3167/climateFinTech/blob/main/Usage.md)
 
 ## Format
 
