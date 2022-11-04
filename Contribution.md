@@ -28,13 +28,16 @@ To get data from repository
 
 `git pull`
 
+## For non django contributers:-
+i.e. Frontend guys.
+please read the [usage.md] (https://github.com/Anirudh3167/climateFinTech/blob/main/Usage.md)
+
 ## Format
 
 #### CSS
 1. Class name should be in camelCase.
 2. Some basic things like core color code and dimensions will be in variables.
-3. Separate folder for css and css variables initialisation.
-4. Files should be stored under the templates folder only
+3. Files should be stored under the static folder only
 
 #### HTML
 1. Page should be formatted properly with opening and closing tags on same line.
