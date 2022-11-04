@@ -1,6 +1,6 @@
 # Usage
 
-Run the [commander batch file] (https://github.com/Anirudh3167/climateFinTech/blob/main/commander.bat).
+Run the [commander batch file](https://github.com/Anirudh3167/climateFinTech/blob/main/commander.bat)
 
 ## For git commands:-
 
