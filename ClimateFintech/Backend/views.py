@@ -9,6 +9,10 @@ def index(request):
 
 def Ankush(request):
   return render(request,'sample_Ankush.html')
+def AboutFinTech(request):
+  return render(request,'about_fintech.html')
+def AboutClimate(request):
+  return render(request,'about_climate.html')
 
 
 def Abhinav(request):
