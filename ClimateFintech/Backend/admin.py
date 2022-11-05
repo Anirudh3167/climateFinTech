@@ -5,3 +5,5 @@ from .models import *
 admin.site.register(User)
 admin.site.register(Services)
 admin.site.register(HelpDesk)
+admin.site.register(Items)
+admin.site.register(CartItems)

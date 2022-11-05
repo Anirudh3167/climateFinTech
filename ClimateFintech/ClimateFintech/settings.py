@@ -25,6 +25,7 @@ SECRET_KEY = 'django-insecure-y%=(f225r2s0c=daot(3@$5uwteu^vn04pgi8jyzb=+x!!le0)
 # SECURITY WARNING: don't run with debug turned on in production!
 
 #Use at the time of deployment
+'''
 DEBUG = False
 
 ALLOWED_HOSTS = ['localhost','127.0.0.1']
@@ -34,7 +35,7 @@ ALLOWED_HOSTS = ['localhost','127.0.0.1']
 DEBUG = True
 
 ALLOWED_HOSTS = []
-'''
+
 
 # Application definition
 
@@ -128,6 +129,11 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
+'''
+#For production time.
+# do python manage.py collectstatic       for produciton. 
+STATIC_ROOT = "/var/www.example.com/static"
+'''
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
