@@ -23,6 +23,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('',index),
     path('Ankush',Ankush),
+    path('AboutFinTech',AboutFinTech),
+    path('AboutClimate',AboutClimate),
     path('Abhinav',Abhinav),
     path('Lakshay',Lakshay),
 ]+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
