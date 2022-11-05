@@ -32,7 +32,7 @@ exit
 	git add .
 	echo\
 	set /p msg= "commit messge:"
-	git commit -m '%msg%'
+	git commit -m "%msg%"
 	git push
 	echo\
 	echo sucessfully pushed. :)
