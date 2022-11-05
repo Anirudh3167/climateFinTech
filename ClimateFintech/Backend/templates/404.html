@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ERROR PAGE</title>
+    <style>
+        .err-cont {
+            display:flex;
+            height: 95vh;
+            width:  100%;
+            justify-content: center;
+            align-items: center;
+        }
+        .error-code {
+            font-size: 40px;
+            font-weight: 800;
+        }
+        .not-found {
+            font-size: 22px;
+        }
+    </style>
+</head>
+<body>
+    {% include "navbar.html" %}
+    <div class="err-cont">
+        <div class="error-code"> 404 |</div>
+        <div class="not-found"> &nbsp; The page was not found</div>
+    </div>
+        {% include "footer.html" %}
+</body>
+</html>

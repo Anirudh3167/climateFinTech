@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpRequest, HttpResponse
 #from django.template import loader
 
@@ -17,3 +17,8 @@ def Abhinav(request):
 
 def Lakshay(request):
   return render(request,'sample_Lakshay.html')
+
+def handler404(request,exception):
+  response = render(request,"404.html")
+  response.status_code = 404
+  return response
