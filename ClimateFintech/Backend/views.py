@@ -13,6 +13,8 @@ def AboutFinTech(request):
   return render(request,'about_fintech.html')
 def AboutClimate(request):
   return render(request,'about_climate.html')
+def UserProfile(request):
+  return render(request,'userProfile.html')
 
 
 def Abhinav(request):
