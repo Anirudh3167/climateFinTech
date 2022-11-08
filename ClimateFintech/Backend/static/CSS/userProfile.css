@@ -13,7 +13,7 @@
 
 nav{
   position: fixed;
-  background: #52ce58;
+  background: #6adfc0;
   height: 80px;
   width: 100%;
 }
@@ -42,11 +42,10 @@ nav ul li a{
   text-transform: uppercase;
 }
 a.active,a:hover{
-  background: #69dc6f;
+  background: #666868;
   transition: .5s;
 }
 .checkbtn{
-  margin-top: 25px;
   font-size: 30px;
   color: white;
   float: right;
@@ -86,52 +85,100 @@ a.active,a:hover{
   }
   a:hover,a.active{
     background: none;
-    color: #8ae88f;
+    color: #c4e1f8;
   }
   #check:checked ~ ul{
     left: 0;
   }
 }
 
-
- /* About */
+/* Content */
 
 .container{
+    display: grid;
+    grid-template-columns: 30% 70%;
+    padding: 100px 150px;
+    gap: 10px
+}
+
+.items{
+    padding: 30px;
+    font-family: "Nunito", "sans-serif";
+}
+
+.item1{
+    grid-row-start: 1;
+    grid-row-end: 3;
+    grid-column-start: 1;
+    grid-column-end: 2;
+}
+.image{
+    text-align: center;
+}
+.image img{
+    width:100px;
+}
+
+.handles{
+    margin-top: 30px;
+}
+.handleButton{
+    border-radius: 3px;
+    padding: 4px;
+    margin-bottom: 1px;
+    border: none;
+    text-align: left;
+    width: 100%;
     background-color: #fff;
-    padding: 50px 100px;
-    height: fit-content;
+    border-radius: 4px;
+}
+.handleButton:hover{
+    text-decoration: none;
+    background: #f3f3f5;
+    cursor: pointer;
+}
+.handleButton a{
+    color: #000;
 }
 
-h1{
-    font-family: serif;
-    font-size: xx-large;
-    font-weight: 800;
-    color: #52ce58;
-    padding-top: 80px;
-    padding-bottom: 40px;
-}
-
-.contentBody{
-    padding-right: 10%;
-}
-
-h3{
-    font-family: 'Nunito', sans-serif;
-    line-height: 25px;
-    font-size: 16px;
+.item2{
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 2;
     color: rgb(79, 79, 79);
-    display: flex;
-    padding-bottom: 20px;
 }
 
-@media only screen and (max-width: 480px) {
-  .container{
-    padding: 10% 5%;
-  }
-
-  .contentBody{
-    padding:0;
-  }
+p{
+    padding: 10px 0;
 }
 
+.line{
+    width: 90%;
+    height: 2px;
+    background: #c5c7cb;
+    border-radius: 2px;
+}
 
+.editButton{
+    background-color: #fff;
+    border-radius: 4px;
+    padding: 5px 8px;
+    float: right;
+    border: none;
+    margin: 10px;
+}
+.editButton:hover{
+    background-color: #f3f3f5;
+    cursor: pointer;
+}
+
+@media (max-width: 989px){
+    .container{
+        grid-template-columns: 100%;
+        padding: 100px 0;
+    }
+    .items{
+        padding: 10px;
+    }
+}

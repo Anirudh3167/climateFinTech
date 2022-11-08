@@ -21,7 +21,7 @@ label.logo{
   color: white;
   font-size: 35px;
   line-height: 80px;
-  padding-left: 80px;
+  margin-left: 80px;
   font-weight: bold;
 }
 nav ul{
@@ -63,7 +63,7 @@ a.active,a:hover{
     display: block;
   }
   label.logo{
-    padding-left: 15px;
+    margin-left: 15px;
   }
   ul{
     position: fixed;
@@ -135,15 +135,4 @@ h3{
   }
 }
 
-/* Footer */
-footer{
-    background-color: #000;
-    color: #fff;
-    height: 250px;
-    padding: 70px 100px;
-}
-@media only screen and (max-width: 480px) {
-    footer{
-        padding: 30px 20px;
-    }
-}
+

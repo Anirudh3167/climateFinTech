@@ -26,6 +26,7 @@ urlpatterns = [
     path('Ankush',Ankush),
     path('AboutFinTech',AboutFinTech),
     path('AboutClimate',AboutClimate),
+    path('UserProfile',UserProfile),
     path('Abhinav',Abhinav),
     path('Lakshay',Lakshay),
 ]+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
