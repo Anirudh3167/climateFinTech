@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WELCOME</title>
+    <style>
+        * {
+            margin:0;
+            padding:0;
+            box-sizing: border-box;
+        }
+        body {
+            display: flex;
+            height: 100vh;
+            width:100%;
+            background-color: #222;
+            align-items: center;
+            justify-content: center;
+        }
+        .welcome-conainer {
+            display:flex;
+            align-items: center;
+            justify-content: center;
+            color:white;
+        }
+        .box-wrapper {
+            display:flex;
+            align-items: center;
+            justify-content: center;
+            width:280px;
+            margin:10px;
+            height: 400px;
+            flex-direction: column;
+            background-color: white;
+        }
+        .sign-type {
+            display:flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: row;
+            border: 3px solid black;
+            border-radius: 20px;
+        }
+        .sign {
+            padding: 0  10px;
+            cursor: pointer;
+            color:black;
+        }
+        form {
+            display:flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            width:100%;
+        }
+        input {
+            border:0;
+            border-bottom: 3px solid black;
+            padding-top: 10px;
+            width:100%;
+            background-color: transparent;
+            color: black;
+        }
+        button {
+            width:100%;
+            background-color: green;
+            color: white;
+            border-radius: 20px;
+            padding:20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="welcome-conainer">
+        <div class="box-wrapper">
+            <div class="sign-type">
+                <div class="sign login" onclick='setType("login")'>Login</div>
+                <div class="sign register" onclick='setType("register")'>Register</div>
+            </div>
+            <form method="POST">
+                {% csrf_token %}
+                <input type="hidden" value="register" name="form-type" id="form-type">
+                <input type="text" name="username" required=true placeholder="UserName">
+                <input type="email" name="email" required=true id="mail" placeholder="Email">
+                <input type="password" name="password" required=true placeholder="Password">
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+    <script>
+        function setType(stringInp) {
+                var e = document.getElementById("form-type");
+                e.value = stringInp;
+                console.log("The value is now:",e.value);
+                var f = document.getElementById("mail");
+                if (stringInp === "login") {
+                    f.required = false;
+                    f.style = "display:none;";
+                } else {
+                    f.required = true;
+                    f.style = "display:unset;";
+                }
+        }
+    </script>
+</body>
+</html>
