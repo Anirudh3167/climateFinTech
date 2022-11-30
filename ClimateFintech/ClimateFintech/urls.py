@@ -21,14 +21,28 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+
+    #API URLS
     path('api/',include('api.urls')),
+
+    #ClimateFinTech URLS
     path('',index,name='index'),
     path('login/',Login,name='Login'),
     path('logout/',Logout,name='Logout'),
-    path('Ankush/',Ankush),
-    path('AboutFinTech/',AboutFinTech,name='AboutFinTech'),
-    path('AboutClimate/',AboutClimate,name='AboutClimate'),
+
+    #ClimateTech URLS
+    path('climatetech/',include('ClimateTech.urls',namespace='climatetech')),
+    #FinTech URLS
+    path('fintech/',include('FinTech.urls',namespace='fintech')),
+    #Store URLS
+    path('store/',include('Store.urls',namespace='store')),
+
+    # path('AboutFinTech/',AboutFinTech,name='AboutFinTech'),
+    # path('AboutClimate/',AboutClimate,name='AboutClimate'),
     path('UserProfile/',UserProfile,name='UserProfile'),
+
+    #TEST URLS
+    #path('Ankush/',Ankush),
     path('Abhinav',Abhinav),
     path('Lakshay',Lakshay),
 ]+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
