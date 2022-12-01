@@ -44,8 +44,23 @@ footer{
     height: 250px;
     padding: 70px 100px;
     width:100%;
-    margin:auto;
-    margin-bottom: 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.social-handles {
+    display: flex;
+    justify-content: space-evenly;
+    width:280px;
+    align-items: center;
+    margin-top: 10px;
+}
+.handles {
+    background-color: aliceblue;
+    color: black;
+    font-size:14px;
+    width: 80px;
 }
 @media only screen and (max-width: 480px) {
     footer{
