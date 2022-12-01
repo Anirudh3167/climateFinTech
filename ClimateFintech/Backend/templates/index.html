@@ -32,6 +32,15 @@
         <a href="{% url 'Login' %}">Login</a>
         {% endif %}
         <h1>This is a trail page.</h1>
+        <br>
+        <div class="checks">
+            These urls below are to switch platforms, for easy testing:-<br>
+            <a href="{% url 'climatetech:home'%}">Climate Tech</a>
+            <br>
+            <a href="{% url 'fintech:home' %}">Fin Tech</a>
+            <br>
+            <a href="{% url 'store:home' %}">Store</a>
+        </div>
         {% include "footer.html" %}
         <script src="" async defer></script>
     </body>
