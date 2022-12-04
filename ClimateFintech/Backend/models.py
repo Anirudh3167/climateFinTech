@@ -1,29 +1,14 @@
 from django.db import models
-
+from django.contrib.auth.models import AbstractUser
 # Create your models here.
-class User(models.Model):
-    Name        = models.CharField(max_length=255)    
-    Mobile      = models.CharField(max_length = 255, unique=True,
-                                error_messages = {'unique': 'A account already exists with this mobile number'})
-    email       = models.EmailField(unique=True,
-                                error_messages = {'unique': 'A account already exists with this mobile number'})
-    id          = models.CharField(max_length=255, primary_key = True,
-                                error_messages = {'primary_key': 'This user id is already taken'})
-    passwd      = models.CharField(max_length=255)
-    JobTitle    = models.CharField(default="",max_length=40)
-    bio         = models.TextField(default="A Rapyd Green user")
-    ques        = models.IntegerField()
-    ans         = models.TextField()
-    balence     = models.CharField(max_length=20)
-    leaf        = models.CharField(max_length=25)
-    premium     = models.CharField(max_length=255)
 
-    class Meta:
-        verbose_name = 'User'
-        verbose_name_plural=verbose_name
+class User_Details(AbstractUser):
+    Name        = models.CharField(max_length=255,null=True)
+    Mobile      = models.CharField(max_length=255,null=True)
+    AccountType = models.CharField(max_length=255,default="Basic")
+    Leaf        = models.CharField(max_length=255,default="0")
+    Bio         = models.TextField(default="A Rapyd green user")
 
-    def __str__(self):
-        return self.Name
 
 class Services(models.Model):
     Name        = models.CharField(max_length=100)

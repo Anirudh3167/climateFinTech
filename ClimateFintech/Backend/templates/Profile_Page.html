@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+    <link rel="stylesheet" href="{% static 'CSS/Profile_Page.css' %}">
+</head>
+<body>
+    {% include "navbar.html" %}
+
+    <div class="profile-wrapper">
+        THis is profile wrapper
+        <br>
+        <br>
+        <br>
+        Username: {{ username }}
+        <br>
+        Name: {{ Name }}
+        <br>
+        Mobile: {{ Mobile }}
+        <br>
+        Leafs: {{ leaf }}
+    </div>
+    <div class="activity-wrapper">This is activity wrapper<br><br>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus atque perspiciatis ab optio laboriosam labore sapiente repellendus, ipsum accusamus iste nostrum quae eius consequatur incidunt autem tempore, quidem at aspernatur!</div>
+    {% include "footer.html" %}
+</body>
+</html>

@@ -13,10 +13,19 @@
             <ul>
                 <li><a href="/">Home</a></li>
                 <li><a href="/">Popular Products</a></li>
-                <li><a href="/">Famous Brands</a></li>
+                <li><a href="UserProfile/">Profile</a></li>
                 <li><a href="/">Customer service</a></li>
                 <li><a href="/">Cart</a></li>
             </ul>
+            {% if user.is_authenticated %}
+            <a href="{% url 'Logout' %}"><div class="login">
+                Logout
+            </div></a>
+            {% else %}
+            <a href="{% url 'Login' %}"><div class="login">
+                Login
+            </div></a>
+            {% endif %}
         </nav>
     </body>
 </html>
