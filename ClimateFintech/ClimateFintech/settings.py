@@ -55,6 +55,7 @@ INSTALLED_APPS = [
     'ClimateTech',
     'FinTech',
     'Store',
+    'Blogs',
 ]
 
 MIDDLEWARE = [
@@ -77,6 +78,7 @@ TEMPLATES = [
                     os.path.join(BASE_DIR,'ClimteTech/templates'),
                     os.path.join(BASE_DIR,'FinTech/templates'),
                     os.path.join(BASE_DIR,'Store/templates'),
+                    os.path.join(BASE_DIR,'Blogs/templates'),
                 ],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -161,3 +163,5 @@ STATIC_ROOT = os.path.join(BASE_DIR,"static")
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 AUTH_USER_MODEL = 'Backend.User_Details'
+
+LOGIN_URL = '/login/'

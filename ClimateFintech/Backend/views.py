@@ -15,6 +15,10 @@ def index(request):
   context = {'name': 'programmer', 'id':'programming','variable':'ntg'}
   return render(request,'index.html',context)
 
+def Help(request):
+  return render(request,'Helpdesk.html')
+def FAQ(request):
+  return render(request,'FAQ.html')
 # def Ankush(request):
 #   return render(request,'sample_Ankush.html')
 # def AboutFinTech(request):
@@ -22,11 +26,30 @@ def index(request):
 # def AboutClimate(request):
   # return render(request,'about_climate.html')
 
-@login_required(login_url='Login')
-def UserProfile(request):
-  username = request.user
-  User_det = model_to_dict(User.objects.get(username=username))
-  return render(request,'Profile_Page.html',User_det)
+#@login_required(login_url='Login')
+def UserProfile(request,uname=''):
+  print(f"UNAME:{uname}")
+  if request.user.is_anonymous:
+    print("Annonymous User")
+    verified = False
+    if uname == '':
+      return redirect('Login')
+  else:
+    if uname == '': 
+      uname = request.user
+    username = request.user
+    if uname == str(username):
+      verified = True
+    else:
+      verified = False
+    # print(f"VERIFIED:{verified}")
+    # print(f"UNAME:{uname},USERNAME:{username}")
+  User_det = model_to_dict(User.objects.filter(username=uname).first())
+  if User_det is []:
+    return render(request,'index.html')
+  User_det["verified"] = verified
+  # print(User_det)
+  return render(request,'userProfile.html',User_det)
 
 
 def Abhinav(request):

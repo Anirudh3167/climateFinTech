@@ -6,54 +6,212 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>User Profile</title>
-    <link rel="stylesheet" href="{% static 'CSS/userProfile.css' %}">
     <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+    <link rel="stylesheet" href="{% static 'CSS/userProfile.css' %}">
 </head>
 <body>
     <!-- Navbar -->
-    <nav>
-        <input type="checkbox" id="check">
-        <label for="check" class="checkbtn">
-            <i class="ri-bar-chart-horizontal-fill"></i>
-        </label>
-        <label class="logo">climateFintech</label>
-        <ul>
-            <li><a class="active" href="#">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Services</a></li>
-            <li><a href="#">Contact</a></li>
-            <li><a href="#">Login/Signup</a></li>
-        </ul>
-    </nav>
-
+    <div class="wrapper">
+      <nav>
+        <input type="checkbox" id="show-search" />
+        <input type="checkbox" id="show-menu" />
+        <label for="show-menu" class="menu-icon"
+          ><i class="fas fa-bars"></i
+        ></label>
+        <div class="content">
+          <div class="logo"><a href="https:www.Rapyd.net">Rapyd</a></div>
+          <ul class="links">
+            <li><a href="{% url 'index' %}">Home</a></li>
+            <li><a href="{% url 'index' %}">About</a></li>
+            <li>
+              <a href="{% url 'index' %}" class="desktop-link">Platforms</a>
+              <input type="checkbox" id="show-features" />
+              <label for="show-features">Platforms</label>
+              <ul>
+                <li><a href="{% url 'climatetech:home' %}"> Climate </a></li>
+                <li><a href="{% url 'fintech:home' %}"> Fintech </a></li>
+                <li><a href="{% url 'store:home' %}"> Store </a></li>
+                <li><a href="{% url 'blogs:home' %}"> Blogs </a></li>
+              </ul>
+            </li>
+            <li><a href="{% url 'index' %}">FAQ</a></li>
+            <li><a href="{% url 'index' %}">Help</a></li>
+            {% if user.is_authenticated %}
+            <li><a href="{% url 'Logout' %}">Logout</a></li>
+            {% else %} 
+            <li><a href="{% url 'Login' %}">Login/Signup</a></li>
+            {% endif %}
+            {% comment %} <li>
+                <a href="#" class="desktop-link">Profile</a>
+                <input type="checkbox" id="show-services" />
+                <label for="show-services">Profile</label>
+                <ul>
+                  <li><a href="#">
+                    <h5>John Doe</h5>
+                    <small><em>Web Developer</em></small>
+                  </a></li>
+                </ul>
+              </li> {% endcomment %}
+              {% if verified %}
+              <li style="color:white; padding: 0 20px; font-weight:bold; display:flex;align-items:center;" 
+              onMouseOver="this.style.background='#323c4e'" 
+              onMouseOut="this.style.background='transparent'">{{ Leaf }} <i class="ri-leaf-fill"></i> Points</li>
+              {% endif %}
+            </ul>
+          </div>
+          <label for="show-search" class="search-icon"
+            ><i class="fas fa-search"></i
+          ></label>
+          <form action="#" class="search-box">
+            <input
+              type="text"
+              placeholder="Type Something to Search..."
+              required
+            />
+            <button type="submit" class="go-icon">
+              <i class="fas fa-long-arrow-alt-right"></i>
+            </button>
+          </form>
+        </nav>
+    </div>
     <!-- Profile Content -->
     <div class="container">
         <div class="items item1">
             <div class="image">
                 <img src="https://www.bing.com/th?id=OIP.u7tUuOHpK3aKNWAVGUR1pQHaHa&w=250&h=250&c=8&rs=1&qlt=90&o=6&dpr=1.3&pid=3.1&rm=2" alt="">
-                <p><b>John Doe</b></p>
-                <p>Full stack developer</p>
-                <p>32/70 - Bay Street, LA</p>
+                <p><b>{{ username }}</b></p>
+                <p>{{ Job }}</p>
+                <p>{{ Email }}</p>
             </div>
-            <div class="handles">
+            <div class="handles" style="width:90px;">
                 <button class="handleButton"><a href=""><i class="ri-github-fill"></i> Github</a></button>
                 <button class="handleButton"><a href=""><i class="ri-linkedin-fill"></i> LinkedIn</a></button>
                 <button class="handleButton"><a href=""><i class="ri-twitter-fill"></i> Twitter</a></button>
                 <button class="handleButton"><a href=""><i class="ri-facebook-fill"></i> Facebook</a></button>
             </div>
         </div>
-        <div class="items item3">
+        <div class="items item2">
             <div class="about">
                 <h2>About</h2>
-                <div class="line"></div>
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsum veniam mollitia neque voluptatum perferendis id ut dolorem, harum vero recusandae quod ratione. Quaerat fugiat officia, sapiente voluptatem laborum est vel ut eos consectetur quibusdam, enim nemo, accusamus quos sed odio repellat quia rerum eveniet saepe repudiandae doloribus blanditiis! Fugit, dolores.</p>
+                <!-- <div class="line"></div> -->
+                <div class="inputField">
+                    <textarea class="textArea" autocomplete="off" name="aboutUser" id="" 
+                    disabled style="width:100%; min-height: 150px; resize: none; margin: 10px 0; margin:5px; padding: 5px; background-color: #fafafa; border-radius: 5px;">
+                      {{ Bio }}
+                    </textarea>
+                </div>
             </div>
-            <button class="editButton">edit <i class="ri-edit-fill"></i></button>
+            {% if verified %}
+            <button onclick="edit()" class="editButton">edit ✏️</button>
+            {% endif %}
         </div>
-        <div class="items item3"></div>
+        {% if verified %}
+        <div class="items item3">
+            <div class="left">
+                <h4 class="editableField abc">Name:</h4>
+                <h3 class="editableField abc">Mobile:</h3>
+                <h3 class="editableField abc">Email:</h3>
+                <h3 class="editableField abc">Job title:</h3>
+                <h3 class="editableField abc">Address:</h3>
+            </div>
+            <div class="right">
+                <textarea class="editableField a" disabled name="" id="" style="width:100%; resize: none; height: 25.6px; background-color: #fafafa; border-radius: 2px">{{ username }}</textarea>
+                <textarea class="editableField b" disabled name="" id="" style="width:100%; resize: none; height: 25.6px; background-color: #fafafa; border-radius: 2px">{{ Mobile }}</textarea>
+                <textarea class="editableField c" disabled name="" id="" style="width:100%; resize: none; height: 25.6px; background-color: #fafafa; border-radius: 2px">{{ email }}</textarea>
+                <textarea class="editableField d" disabled name="" id="" style="width:100%; resize: none; height: 25.6px; background-color: #fafafa; border-radius: 2px">{{ Job }}</textarea>
+                <textarea class="editableField e" disabled name="" id="" style="width:100%; resize: none; height: 25.6px; background-color: #fafafa; border-radius: 2px"></textarea>
+                <button onclick="edit3()" class="editButton3">edit ✏️</button>
+            </div>
+        </div>
+        {% endif %}
+        <div class="items item4">
+          <h2>Recent Blogs</h2><br>
+          <h3><a href="#">Blog-1</a></h3>
+          <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quos, sequi!</p><br>
+          <h3><a href="#">Blog-2</a></h3>
+          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Inventore, nesciunt.</p><br>
+          <h3><a href="#">Blog-3</a></h3>
+          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Maiores, esse.</p><br>
+          <h3><a href="#">Blog-4</a></h3>
+          <p>Dolorum laboriosam velit ut non? Alias accusantium explicabo ut nihil dolor qui!</p><br>
+          <h3><a href="#">Blog-5</a></h3>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+        </div>
+        {% if verified %}
+        <div class="items item5">
+          <h2>Recent Transactions</h2>
+          <h3><a href="#">Transaction 1</a></h3>
+          <h3><a href="#">Transaction 2</a></h3>
+          <h3><a href="#">Transaction 3</a></h3>
+          <h3><a href="#">Transaction 4</a></h3>
+          <h3><a href="#">Transaction 5</a></h3>
+          <h3><a href="#">Transaction 6</a></h3>
+          <h3><a href="#">Transaction 7</a></h3>
+          <h3><a href="#">Transaction 8</a></h3>
+          <h3><a href="#">Transaction 9</a></h3>
+          <h3><a href="#">Transaction 10</a></h3>
+        </div>
+        <div class="items item6">
+          <h2>Order history</h2><br>
+          <div class="product-history">
+            <img src="https://m.media-amazon.com/images/I/61eakvk3qnL._AC_UL480_FMwebp_QL65_.jpg" alt="">
+            <div class="status">
+              <h4>Shampoo Bar Soap</h4>
+              <small>Quantity-1</small><br>
+              <small><em>Ordered</em></small>
+            </div>
+            <div class="date-purchased">
+              <small><b>Date:</b> 08-dec-2022</small><br>
+              <small><b>Price: $16.99</b></small>
+            </div>
+          </div>
+          <div class="product-history">
+            <img src="https://m.media-amazon.com/images/I/61eakvk3qnL._AC_UL480_FMwebp_QL65_.jpg" alt="">
+            <div class="status">
+              <h4>Shampoo Bar Soap</h4>
+              <small>Quantity-1</small><br>
+              <small><em>Ordered</em></small>
+            </div>
+            <div class="date-purchased">
+              <small><b>Date:</b> 08-dec-2022</small><br>
+              <small><b>Price: $16.99</b></small>
+            </div>
+          </div>
+        </div>
+        {% endif %}
     </div>
-
     <!-- Footer -->
     {% include "footer.html" %}
+    {% if verified %}
+    <script>
+        function edit(){
+            document.querySelector(".textArea").toggleAttribute("disabled");
+            let x = document.querySelector(".editButton");
+            if (x.innerHTML === "edit ✏️") {
+                x.innerHTML = "Save changes";
+            } else {
+                x.innerHTML = "edit ✏️";
+            }
+        }
+
+        function edit3(){
+            document.querySelector(".a").toggleAttribute("disabled");
+            document.querySelector(".b").toggleAttribute("disabled");
+            document.querySelector(".c").toggleAttribute("disabled");
+            document.querySelector(".d").toggleAttribute("disabled");
+            document.querySelector(".e").toggleAttribute("disabled");
+            let x = document.querySelector(".editButton3");
+            if (x.innerHTML === "edit ✏️") {
+                x.innerHTML = "Save changes";
+            } else {
+                x.innerHTML = "edit ✏️";
+            }
+        }
+    </script>
+    {% endif %}
 </body>
 </html>

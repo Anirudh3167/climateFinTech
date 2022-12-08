@@ -1,0 +1,195 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <title>FAQ</title>
+        <link rel="stylesheet" href="https://unpkg.com/tailwindcss@2.2.19/dist/tailwind.min.css"/>
+    </head>
+    <style>
+        ::-webkit-scrollbar{
+            width: 0;
+        }
+        body{
+            background-color: #F3F4F6;  /*Page's background color*/     /*TODO  Change to Need*/
+            min-height:100vh;
+        }
+        .graphic-faq{
+            margin-top: 2rem; 
+            opacity: 0.75; 
+        }
+        .graphic-svg{
+            width: 50%; 
+            max-width: 640px;
+            margin-right: auto; 
+            margin-left: auto;  
+        }
+        .header-faq{
+            margin-right: auto; 
+            margin-left: auto;
+            padding-left: 1rem;
+            padding-right: 1rem; 
+            margin-top: 3rem; 
+            color: #312E81;             /*Text color for "frequently asked questions" */    /*TODO CHange to need*/
+            font-size: 1.5rem;
+            line-height: 2rem;
+            font-weight: 600;   /*semibold*/
+            text-align: center; 
+        }
+        .questions{
+            margin-right: auto; 
+            margin-left: auto;
+            display: flex; 
+            margin-top: 2rem; 
+            flex-direction: column; 
+            max-width: 640px; 
+        }
+        /*Desktop view*/
+        @media (min-width: 1024px) {
+            .questions{ 
+                flex-direction: row; 
+                flex-wrap: wrap; 
+                max-width: 1024px;  
+            }
+            .question-triggered{
+               width: 50%;        
+            }
+        }
+        .question>div{
+            display: flex; 
+            justify-content: space-between; 
+        }
+        .question>div>div{
+            color: #3730A3;         /*Text color for "frequently asked questions" */    /*TODO CHange to need*/
+            font-weight: 600;     
+        }
+        .question-and-answer{
+            padding-top: 1rem;
+            padding-bottom: 1rem; 
+            padding-left: 1.5rem;
+            padding-right: 1.5rem; 
+            margin-top: 0.75rem;
+            margin-bottom: 0.75rem; 
+            margin-left: 2rem;
+            margin-right: 2rem; 
+            font-size: 0.875rem;
+            line-height: 1.25rem; 
+            border-radius: 0.5rem; 
+            border-width: 2px; 
+            cursor: pointer; 
+            user-select: none; 
+        }
+        .answer{
+            display: hidden; 
+            margin-top: 0.5rem; 
+            color: #374151; 
+            line-height: 1.375;
+        }
+    </style>
+    {% include 'navbar.html' %}
+    <body>
+        <div>
+            <div>
+                                <!--Rest of the page-->
+                <div>
+                    <!--Header aka FAQ-->
+                    <div class="header-faq">Frequently Asked Questions</div>
+                    
+                    <dl class="questions">
+
+                        <!--The Question $ itself-->
+
+                        <div class="question-triggered">  <!--Responsive Trigger @media{>1024px}=>{w=50%}-->
+                            <!--""question-and-answer"" = trigger for jquery-->
+                            <div class="question-and-answer">
+                                <!--Question title-->
+                                <dt class="question">
+                                    <div>
+                                        <div class="">
+                                        Et tu lorem ipsum?
+                                        </div>
+                                        <!--Arrowhead graphic ~> animated-->
+                                        <div>
+                                            <svg fill=currentColor class="question-chevron group-hover:bg-gray-500 h-5 block text-indigo-800 bg-gray-400 rounded-full p-1" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                                <g stroke="currentColor" stroke-width="1" fill=currentColor fill-rule="evenodd">
+                                                <g>
+                                                <polygon points="9.29289322 12.9497475 10 13.6568542 15.6568542 8 14.2426407 6.58578644 10 10.8284271 5.75735931 6.58578644 4.34314575 8"></polygon>
+                                                </g>
+                                                </g>
+                                            </svg>
+                                            <svg fill=currentColor class="question-chevron hidden group-hover:bg-gray-500 h-5 block text-indigo-800 bg-gray-400 rounded-full p-1" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                                <g stroke="currentColor" stroke-width="1" fill=currentColor fill-rule="evenodd">
+                                                <g>
+                                                <polygon points="10.7071068 7.05025253 10 6.34314575 4.34314575 12 5.75735931 13.4142136 10 9.17157288 14.2426407 13.4142136 15.6568542 12"></polygon>
+                                                </g>
+                                                </g>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </dt>
+                                <!--Answer-->
+                                <dd class="answer">
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi harum, unde, pariatur illo ipsum mollitia doloremque debitis quo error voluptas deserunt aperiam asperiores ipsam fugiat ex aspernatur molestias eius sunt.
+                                </dd>
+                            </div>
+                        </div>
+
+                        <!--The Question $ itself-->
+                        <div class="question-triggered">  <!--Responsive Trigger @media{>1024px}=>{w=50%}-->
+                            <!--""question-and-answer"" = trigger for jquery-->
+                            <div class="question-and-answer">
+                                <!--Question title-->
+                                <dt class="question">
+                                    <div>
+                                        <div class="">
+                                        Et tu lorem ipsum?
+                                        </div>
+                                        <!--Arrowhead graphic ~> animated-->
+                                        <div>
+                                            <svg fill=currentColor class="question-chevron group-hover:bg-gray-500 h-5 block text-indigo-800 bg-gray-400 rounded-full p-1" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                                <g stroke="currentColor" stroke-width="1" fill=currentColor fill-rule="evenodd">
+                                                <g>
+                                                <polygon points="9.29289322 12.9497475 10 13.6568542 15.6568542 8 14.2426407 6.58578644 10 10.8284271 5.75735931 6.58578644 4.34314575 8"></polygon>
+                                                </g>
+                                                </g>
+                                            </svg>
+                                            <svg fill=currentColor class="question-chevron hidden group-hover:bg-gray-500 h-5 block text-indigo-800 bg-gray-400 rounded-full p-1" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                                <g stroke="currentColor" stroke-width="1" fill=currentColor fill-rule="evenodd">
+                                                <g>
+                                                <polygon points="10.7071068 7.05025253 10 6.34314575 4.34314575 12 5.75735931 13.4142136 10 9.17157288 14.2426407 13.4142136 15.6568542 12"></polygon>
+                                                </g>
+                                                </g>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </dt>
+                                <!--Answer-->
+                                <dd class="answer">
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi harum, unde, pariatur illo ipsum mollitia doloremque debitis quo error voluptas deserunt aperiam asperiores ipsam fugiat ex aspernatur molestias eius sunt.
+                                </dd>
+                            </div>
+                        </div>
+                    </dl>
+
+                    
+                </div>
+            </div>
+        </div>
+        <!--JQuery for triggering show answers--> <!--- Don't Remove Me !!! --->
+        <script
+            src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+            integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8="
+            crossorigin="anonymous">
+        </script>
+        <!--Using Jquery-->
+        <script>
+            $('.question-and-answer').click(function() {
+                $(this).find(".answer").toggleClass("hidden")
+                $(this).find(".question-chevron").toggleClass("hidden")
+            })
+        </script>
+      </div>
+    </body>
+    {% include 'footer.html' %}
+</html>

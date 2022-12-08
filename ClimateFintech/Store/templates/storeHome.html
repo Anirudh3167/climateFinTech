@@ -1,0 +1,88 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Store</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    <link rel="stylesheet" type="text/css" href="{% static '/CSS/store_home.css' %}">
+  </head>
+  <body>
+    {% include 'store_navbar.html' %}
+    <!-- Products -->
+
+    <!-- Category 1 -->
+    <div class="small-container">
+      <div class="categories">
+      
+        <h2 class="title">Featured Products</h2>
+        <div class="row">
+            <a href="{% url 'store:product-details' %}">
+              <div class="col-3">
+                <img src="https://m.media-amazon.com/images/I/61eakvk3qnL._AC_UL480_FMwebp_QL65_.jpg" alt="">
+                <h3>$16.99</h3>
+                <p>Shampoo Bar Soap and Conditioner Bars for Oily Hair and Dandruff, Natural...</p>
+                <p>⭐⭐⭐</p>
+              </div>
+            </a>
+            <div class="col-3">
+              <img src="https://m.media-amazon.com/images/I/913oLOrR9mL._AC_UL480_FMwebp_QL65_.jpg" alt="">
+              <h3>$39.99</h3>
+              <p>DE Plastic-Free Glass Food Storage Containers with Eco-Friendly Bamboo Wooden Lids, Set of 4 Pantry...</p>
+              <p>⭐⭐⭐⭐</p>
+            </div>
+            <div class="col-3">
+              <img src="https://m.media-amazon.com/images/I/81SyR4XdshL._AC_UL480_FMwebp_QL65_.jpg" alt="">
+              <h3>$14.99</h3>
+              <p>Agile Eco Friendly Pens (Pack of 50) Back to School Supplies - Plastic Free Eco Pens, Sustainably made from Kraft...</p>
+              <p>⭐⭐⭐⭐</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Category 2 -->
+    <div class="small-container">
+      <div class="categories">
+      
+        <h2 class="title">Latest Hits</h2>
+        <div class="row">
+            <a href="{% url 'store:product-details' %}">
+              <div class="col-4">
+                <img src="https://m.media-amazon.com/images/I/61eakvk3qnL._AC_UL480_FMwebp_QL65_.jpg" alt="">
+                <h3>$16.99</h3>
+                <p>Shampoo Bar Soap and Conditioner Bars for Oily Hair and Dandruff, Natural...</p>
+                <p>⭐⭐⭐</p>
+              </div>
+            </a>
+            <a href="#">
+              <div class="col-4">
+                <img src="https://m.media-amazon.com/images/I/913oLOrR9mL._AC_UL480_FMwebp_QL65_.jpg" alt="">
+                <h3>$39.99</h3>
+                <p>DE Plastic-Free Glass Food Storage Containers with Eco-Friendly Bamboo Wooden Lids, Set of 4 Pantry...</p>
+                <p>⭐⭐⭐⭐</p>
+              </div>
+            </a>
+            <a href="#">
+              <div class="col-4">
+                <img src="https://m.media-amazon.com/images/I/81SyR4XdshL._AC_UL480_FMwebp_QL65_.jpg" alt="">
+                <h3>$14.99</h3>
+                <p>Agile Eco Friendly Pens (Pack of 50) Back to School Supplies - Plastic Free Eco Pens, Sustainably made from Kraft...</p>
+                <p>⭐⭐⭐⭐</p>
+              </div>
+            </a>
+            <a href="{% url 'store:product-details' %}">
+              <div class="col-4">
+                <img src="https://m.media-amazon.com/images/I/61eakvk3qnL._AC_UL480_FMwebp_QL65_.jpg" alt="">
+                <h3>$16.99</h3>
+                <p>Shampoo Bar Soap and Conditioner Bars for Oily Hair and Dandruff, Natural...</p>
+                <p>⭐⭐⭐</p>
+              </div>
+            </a>
+        </div>
+    </div>
+    </div>
+    {% include 'footer.html' %}
+  </body>
+</html>

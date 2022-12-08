@@ -1,47 +1,57 @@
-<!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+{% load static %}
 <html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>TESTING | /\ /\/\</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <style>
-            h1 {
-                width:100%;
-                height:150px;
-                text-align: center;
-                font-size: 25px;
-                font-weight: 600;
-            }
-        </style>
-    </head>
-    <body>
-        <!--[if lt IE 7]>
-            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
-        {% include "navbar.html" %}
-        {% if user.is_authenticated %}
-        <h1>You are Authenticated <b>{{ user.username }}</b></h1>
-        <a href="{% url 'Logout' %}">Logout</a>
-        {% else %}
-        <a href="{% url 'Login' %}">Login</a>
-        {% endif %}
-        <h1>This is a trail page.</h1>
-        <br>
-        <div class="checks">
-            These urls below are to switch platforms, for easy testing:-<br>
-            <a href="{% url 'climatetech:home'%}">Climate Tech</a>
-            <br>
-            <a href="{% url 'fintech:home' %}">Fin Tech</a>
-            <br>
-            <a href="{% url 'store:home' %}">Store</a>
+
+<head>
+
+  <title>replit</title>
+  <link href="{% static '/CSS/index.css' %}" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+    {% include 'navbar.html' %}
+  <div class="main-wrapper">
+    {% comment %} <div class="main-heading">
+       <i>CLIMATEFINTECH</i>
+    </div>
+    <div class="main-content">
+       powered by Rapyd
+    </div>
+     {% endcomment %}
+    <div class="headings">
+       PLATFORMS
+    </div>      
+    <div class="platforms">
+        <div class="platform">
+          <a href="{% url 'climatetech:home' %}"> 
+            <div class="content">
+             Climate tech
+            </div>
+          </a>
         </div>
-        {% include "footer.html" %}
-        <script src="" async defer></script>
-    </body>
+        <div class="platform">
+           <a href="{% url 'fintech:home' %}"> 
+            <div class="content">
+             Fintech
+            </div>
+          </a>
+        </div>
+        <div class="platform">
+           <a href="{% url 'store:home' %}"> 
+            <div class="content">
+             store
+            </div>
+          </a>
+        </div>
+        <div class="platform">
+            <a href="{% url 'blogs:home' %}"> 
+             <div class="content">
+              Blogs
+             </div>
+           </a>
+         </div>
+     </div>    
+  </div>
+  {% include 'footer.html' %}
+</body>
+
 </html>

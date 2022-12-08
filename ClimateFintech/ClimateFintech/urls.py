@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path , include
-from Backend.views import *
+from Backend import views
 from django.conf import settings
 from django.conf.urls.static import static
 
@@ -26,9 +26,11 @@ urlpatterns = [
     path('api/',include('api.urls')),
 
     #ClimateFinTech URLS
-    path('',index,name='index'),
-    path('login/',Login,name='Login'),
-    path('logout/',Logout,name='Logout'),
+    path('',views.index,name='index'),
+    path('login/',views.Login,name='Login'),
+    path('logout/',views.Logout,name='Logout'),
+    path('faq/',views.FAQ,name='FAQ'),
+    path('help-desk',views.Help,name="HelpDesk"),
 
     #ClimateTech URLS
     path('climatetech/',include('ClimateTech.urls',namespace='climatetech')),
@@ -36,13 +38,15 @@ urlpatterns = [
     path('fintech/',include('FinTech.urls',namespace='fintech')),
     #Store URLS
     path('store/',include('Store.urls',namespace='store')),
+    #Blog URLS
+    path('blogs/',include('Blogs.urls',namespace='blogs')),
 
     # path('AboutFinTech/',AboutFinTech,name='AboutFinTech'),
     # path('AboutClimate/',AboutClimate,name='AboutClimate'),
-    path('UserProfile/',UserProfile,name='UserProfile'),
+    path('UserProfile@<str:uname>',views.UserProfile,name='UserProfile'),
 
     #TEST URLS
     #path('Ankush/',Ankush),
-    path('Abhinav',Abhinav),
-    path('Lakshay',Lakshay),
+    path('Abhinav',views.Abhinav),
+    path('Lakshay',views.Lakshay),
 ]+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
