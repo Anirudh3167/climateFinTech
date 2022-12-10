@@ -39,8 +39,9 @@
         width:0px;
     }
 </style>
-{% include 'navbar.html' %}
+{% include 'blogs/navbar.html' %}
 <body>
+<div class="main-wrapper">
     <div class="blog-wrapper">
         <div class="blog-title">{{ title }}</div>
         <div class="author">Author:{{ author }}</div>
@@ -67,6 +68,7 @@
         <a href="#">Search8</a> <br>
         <a href="#">Search9</a> <br>
     </div>
+</div>
     {% include 'footer.html' %}
 </body>
 

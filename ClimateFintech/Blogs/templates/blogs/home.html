@@ -11,12 +11,13 @@
             padding:0;
             box-sizing:border-box;
         }
-        body {
+        .development {
             display: flex;
-            align-items:center;
             justify-content:center;
-            height:100vh;
-            width:100%;
+            align-items:center;
+            margin:auto;
+            margin-top:150px;
+            margin-bottom:150px;
         }
         .box-wrapper {
             
@@ -30,12 +31,28 @@
             border: 1px solid black;
             flex-direction:column;
         }
+        .content-tag {
+            display: flex;
+            height: 95vh;
+            width:100%;
+            justify-content: center;
+            align-items: center;
+        }
     </style>
 </head>
 <body>
-    <div class="box-wrapper">
-        Under Development   <br>
-        <a href="{% url 'index' %}">Go Back</a>
+    {% include 'blogs/navbar.html' %}
+
+    {% comment %} {% endcomment %}
+    <div class="content-tag">
+        <div class="development">
+            <div class="box-wrapper">
+                Under Development   <br>
+                <a href="{% url 'index' %}">Go Back</a>
+            </div>
+        </div> 
     </div>
+    {% include 'footer.html' %}
+
 </body>
 </html>

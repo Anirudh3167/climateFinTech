@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blogs | {{request.user.username}}</title>
+    <style>
+        * {
+            margin:0;
+            padding:0;
+            box-sizing: border-box;
+        }
+        .blogs-wrapper {
+            display:flex;
+            min-height: 100vh;
+            width: 100%;
+        }
+        .blogs {
+            display: flex;
+            margin:auto;
+            flex-direction: column;
+            margin-top: 90px;
+        }
+        .line {
+            width:100vw;
+            background-color: black;
+            height:2px;
+        }
+        .delete-class {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            width: 100%;
+        }
+        .delete-btn {
+            display: flex;
+            width:100px;
+            height:40px;
+            font-size:16px;
+            align-items: center;
+            justify-content: center;
+            background-color: rgb(151, 10, 10);
+            color:white;
+        }
+        .delete-btn:hover {
+            background-color: rgb(184, 8, 8);
+        }
+    </style>
+</head>
+<body>
+    {% include 'blogs/navbar.html' %}
+
+    <div class="blogs-wrapper">
+        <div class="blogs">
+            
+            <h1>{{ request.user.username }}</h1>
+            {% for key, values in blogs.items %}
+            <div class="line"></div>
+            <div class="blog-wrapper">
+                Title:{{ values.title }} <br><br>
+                Content:{{ values.content }} <br><br>
+            </div>
+            <a href="{% url 'blogs:DeletePost' values.id %}" class="delete-class">
+                <button class="delete-btn">
+                    Delete
+                </button>
+            </a>
+            {% endfor %}
+            <div class="line"></div>
+        </div>
+    </div>
+    {% include 'footer.html' %}
+</body>
+</html>
