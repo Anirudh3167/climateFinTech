@@ -40,7 +40,8 @@ class Transactions(models.Model):
     sender     = models.ForeignKey(User_Details,on_delete=models.CASCADE)
     reciever   = models.CharField(max_length=255)
     currency    = models.CharField(max_length=5)
-    date        =  models.DateTimeField(timezone.now())
+    date        =  models.DateTimeField(default=timezone.now())
+
     class Meta:
         verbose_name = 'Transactions'
         verbose_name_plural=verbose_name
@@ -64,10 +65,13 @@ class Blogs(models.Model):
 ################################################
 
 class Lables(models.Model):
-    name = models.CharField(max_length=255)
+    name = models.CharField(max_length=255)  
+    def __str__(self):
+        return self.name
     class Meta:
         verbose_name = 'Lables'
         verbose_name_plural=verbose_name
+    
 
 class Products(models.Model):
     Product_Name = models.CharField(max_length=255)
@@ -76,6 +80,9 @@ class Products(models.Model):
     Product_price = models.CharField(max_length=10)
     Stock = models.CharField(max_length=10)
     Lables = models.ManyToManyField(Lables)
+    def __str__(self):
+        return self.Product_Name
+    
     class Meta:
         verbose_name = 'Products'
         verbose_name_plural=verbose_name
@@ -85,7 +92,7 @@ class CartItems(models.Model):
     code = models.ForeignKey(Products,on_delete=models.DO_NOTHING,related_name='code')
     qty = models.CharField(max_length=10)
     status = models.CharField(max_length=5,default="ordered")  #i.e. Ordered and Delivered
-    ordered_date = models.DateTimeField(timezone.now())
+    ordered_date = models.DateTimeField(default=timezone.now())
     class Meta:
         verbose_name = 'CartItems'
         verbose_name_plural=verbose_name
@@ -99,7 +106,7 @@ class records(models.Model):
     param1 = models.CharField(max_length=30,blank=True)
     param2 = models.CharField(max_length=30,blank=True)
     param3 = models.CharField(max_length=30,blank=True)
-    date    = models.DateTimeField(timezone.now())
+    date    = models.DateTimeField(default=timezone.now())
     class Meta:
         verbose_name = 'records'
         verbose_name_plural=verbose_name

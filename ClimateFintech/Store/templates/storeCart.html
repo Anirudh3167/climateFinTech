@@ -263,6 +263,19 @@
         margin: 20px 50px;
       }
 
+      .remove-cart-items {
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        background-color:rgb(148, 12, 12);
+        color:white;
+        font-size:17px;
+        width:100px;
+        height: 40px;
+      }
+      .remove-cart-items:hover {
+        background-color:rgb(192, 13, 13);
+      }
       @media screen and (max-width: 400px) {
         .cart-info p{
             display: none;
@@ -293,22 +306,25 @@
                 <th>Quantity</th>
                 <th>Subtotal</th>
             </tr>
+            {% for keys,values in context.items %}
             <tr>
                 <td>
                     <div class="cart-info">
                         <img src="https://m.media-amazon.com/images/I/61eakvk3qnL._AC_UL480_FMwebp_QL65_.jpg" alt="">
                         <div>
-                            <p>Shampoo Bar Soap</p>
-                            <small>Price: $16.99</small>
+                            <p> <a href="{% url 'store:product-details' search=values.Product_Name %}">{{ values.Product_Name}}</a></p>
+                            <small>Price: ${{ values.Product_price}}</small>
+                            <!-- <p>Values id: {{ values.id }}</p> -->
                             <br>
-                            <a href=""><small>Remove</small></a>
+                            <a href="{% url 'store:Remove' values.id %}"><small class="remove-cart-items">Remove</small></a>
                         </div>    
                     </div>
                 </td>
-                <td><input type="number" name="" value="1"></td>
-                <td>$16.99</td>
+                <td><input type="number" name="" value="{{ values.qty }}" readonly></td>
+                <td>${{ values.multiply_res }}</td>
             </tr>
-            <tr>
+            {% endfor %}
+            <!-- <tr>
                 <td>
                     <div class="cart-info">
                         <img src="https://m.media-amazon.com/images/I/81SyR4XdshL._AC_UL480_FMwebp_QL65_.jpg" alt="">
@@ -337,32 +353,32 @@
                 </td>
                 <td><input type="number" name="" value="1"></td>
                 <td>$39.99</td>
-            </tr>
+            </tr> -->
         </table>
 
         <div class="total-price">
             <table>
                 <tr>
                     <td>Subtotal</td>
-                    <td>$50.97</td>
+                    <td>${{ sub_total }}</td>
                 </tr>
                 <tr>
                     <td>Shipping</td>
-                    <td>$4.99</td>
+                    <td>${{ shipping }}</td>
                 </tr>
                 <tr>
                     <td>Tax</td>
-                    <td>$9.99</td>
+                    <td>${{ tax }}</td>
                 </tr>
                 <tr>
                     <td>Total</td>
-                    <td>$89.96</td>
+                    <td>${{ total_amount }}</td>
                 </tr>
             </table>
 
             
         </div>
-        <a style="background-color:transparent;" href="{% url 'store:pay-direct' %}">
+        <a style="background-color:transparent;" href="{% url 'store:pay-direct' total_amount %}">
         <div class="btn ptp-btn" style="cursor:pointer;background-color:#0082e6;">Proceed to pay</div>
         </a>
     </div>

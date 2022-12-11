@@ -14,12 +14,13 @@
     <!-- Products -->
 
     <!-- Category 1 -->
+    <div class="ultra-wrapper" style="width:100vw;">
     <div class="small-container">
       <div class="categories">
       
         <h2 class="title">Featured Products</h2>
         <div class="row">
-            <a href="{% url 'store:product-details' %}">
+            <a href="{% url 'store:product-details' search='Shampoo-Bar' %}">
               <div class="col-3">
                 <img src="https://m.media-amazon.com/images/I/61eakvk3qnL._AC_UL480_FMwebp_QL65_.jpg" alt="">
                 <h3>$16.99</h3>
@@ -27,18 +28,22 @@
                 <p>⭐⭐⭐</p>
               </div>
             </a>
+            <a href="{% url 'store:product-details' search='Glass-Storage' %}">
             <div class="col-3">
               <img src="https://m.media-amazon.com/images/I/913oLOrR9mL._AC_UL480_FMwebp_QL65_.jpg" alt="">
               <h3>$39.99</h3>
               <p>DE Plastic-Free Glass Food Storage Containers with Eco-Friendly Bamboo Wooden Lids, Set of 4 Pantry...</p>
               <p>⭐⭐⭐⭐</p>
             </div>
+            </a>
+            <a href="{% url 'store:product-details' search='Sampoo-Bar' %}">
             <div class="col-3">
               <img src="https://m.media-amazon.com/images/I/81SyR4XdshL._AC_UL480_FMwebp_QL65_.jpg" alt="">
               <h3>$14.99</h3>
               <p>Agile Eco Friendly Pens (Pack of 50) Back to School Supplies - Plastic Free Eco Pens, Sustainably made from Kraft...</p>
               <p>⭐⭐⭐⭐</p>
             </div>
+            </a>
         </div>
     </div>
 
@@ -48,7 +53,7 @@
       
         <h2 class="title">Latest Hits</h2>
         <div class="row">
-            <a href="{% url 'store:product-details' %}">
+            <a href="{% url 'store:product-details' search='Shampoo-Bar' %}">
               <div class="col-4">
                 <img src="https://m.media-amazon.com/images/I/61eakvk3qnL._AC_UL480_FMwebp_QL65_.jpg" alt="">
                 <h3>$16.99</h3>
@@ -56,7 +61,7 @@
                 <p>⭐⭐⭐</p>
               </div>
             </a>
-            <a href="#">
+            <a href="{% url 'store:product-details' search='Glass-Storage' %}">
               <div class="col-4">
                 <img src="https://m.media-amazon.com/images/I/913oLOrR9mL._AC_UL480_FMwebp_QL65_.jpg" alt="">
                 <h3>$39.99</h3>
@@ -64,7 +69,7 @@
                 <p>⭐⭐⭐⭐</p>
               </div>
             </a>
-            <a href="#">
+            <a href="{% url 'store:product-details' search='Shampoo-Bar' %}">
               <div class="col-4">
                 <img src="https://m.media-amazon.com/images/I/81SyR4XdshL._AC_UL480_FMwebp_QL65_.jpg" alt="">
                 <h3>$14.99</h3>
@@ -72,7 +77,7 @@
                 <p>⭐⭐⭐⭐</p>
               </div>
             </a>
-            <a href="{% url 'store:product-details' %}">
+            <a href="{% url 'store:product-details'  search='Shampoo-Bar' %}">
               <div class="col-4">
                 <img src="https://m.media-amazon.com/images/I/61eakvk3qnL._AC_UL480_FMwebp_QL65_.jpg" alt="">
                 <h3>$16.99</h3>
@@ -83,6 +88,7 @@
         </div>
     </div>
     </div>
+  </div>
     {% include 'footer.html' %}
   </body>
 </html>

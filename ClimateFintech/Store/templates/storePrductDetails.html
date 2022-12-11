@@ -268,38 +268,10 @@
 
   <body>
     <!-- Navbar -->
-    <nav>
-      <div class="navbar">
-        <div class="container nav-container">
-          <input class="checkbox" type="checkbox" name="" id="" />
-          <div class="hamburger-lines">
-            <span class="line line1"></span>
-            <span class="line line2"></span>
-            <span class="line line3"></span>
-          </div>
-          <div class="logo">
-            <h1>Rapyd Store</h1>
-          </div>
-          <div class="menu-items">
-            <li><a href="home.html">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">FAQ</a></li>
-            <li><a href="#">Help</a></li>
-            <li>
-              <a href="#"><i class="fa fa-user"></i></a>
-            </li>
-            <li>
-              <a href="storeCart.html"
-                ><i class="fa fa-shopping-cart" aria-hidden="true"></i
-              ></a>
-            </li>
-          </div>
-        </div>
-      </div>
-    </nav>
-
+    {% include 'store_navbar.html' %}
     <!-- Single Product details -->
     <!-- first product -->
+    <div class="ultra-wrapper">
     <div class="small-container single-product">
       <div class="row">
         <div class="col-2">
@@ -311,27 +283,39 @@
         </div>
         <div class="col-2">
           <h2 class="">
-            Shampoo Bar Soap and Conditioner Bars for Oily Hair and Dandruff,
-            Natural Peppermint and Argan Oil, pH Balanced, Sulfate Free, Eco
-            Friendly, Zero Waste
+            {{ Product_title }}
           </h2>
           <p>⭐⭐⭐⭐</p>
-          <h3>$16.99</h3>
-          <input type="number" name="" value="1" />
-          <a href="{% url 'store:cart' %}" class="btn">Add To Cart</a>
+          <h3>{{ Product_price }}</h3>
+          {% if user.is_authenticated %}
+          <form method="post" action="">
+            {% csrf_token %}
+          <input type="number" name="qty" value="1" id="inp" min="1" max="{{ Stock }}"/>
+          <input type="hidden" value="{{ id }}" name="prod_code">
+          <button type="submit" class="btn">Add To Cart</button>
+          </form>
+          {% else %}
+          <input type="number" name="qty" value="1" Id="inp" oninput="validator()"/>
+          <script>
+            function validator() {
+              e = document.getElementById("inp")
+              if (e.value < 1) {
+                e.value = 1
+              }
+              if (e.value > "{{ Stock }}") {
+                e.value = "{{ stock }}"
+              }
+            }
+          </script>
+          <a href="{% url 'Login' %}" class="btn">Add To Cart</a>
+          {% endif %}
           <h4>Product Details <i class="fa fa-indent"></i></h4>
-          <p>Product Benefits - Hydrating, oil control</p>
-          <p>
-            Material Type Free - Paraben free, sulfate free, silicone free,
-            preservative free
-          </p>
-          <p>Item Form - Bar</p>
-          <p>Brand - SAPHUS</p>
-          <p>Hair Type - Oily</p>
+          <p>{{ Product_desc }}</p><br>
+          <h4>Stock:</h4>{{ Stock }}
         </div>
       </div>
     </div>
-
+  </div>
     <!-- Store below product in objects so that it can be rendered when user clicks from storeHome page-->
     <!-- Second Product -->
     <!-- <div class="small-container single-product">
@@ -378,5 +362,6 @@
             </div>
         </div>
 </div> -->
+  {% include 'footer.html' %}
   </body>
 </html>

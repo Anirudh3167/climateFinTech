@@ -70,7 +70,7 @@
 
       .nav-container .checkbox {
         position: absolute;
-        display: block;
+        display: none;
         height: 32px;
         width: 32px;
         top: 20px;
@@ -79,10 +79,9 @@
         opacity: 0;
         cursor: pointer;
       }
-
       .nav-container .hamburger-lines {
         height: 26px;
-        display: flex;
+        display: none;
         flex-direction: column;
         justify-content: space-between;
         width: 32px;
@@ -97,6 +96,7 @@
         height: 4px;
         border-radius: 10px;
         background: #0e2431;
+        margin-bottom: 7px;
       }
 
       .nav-container .hamburger-lines .line1 {
@@ -145,8 +145,18 @@
       }
 
       @media screen and (max-width: 800px) {
+        .nav-container .checkbox {
+          display: block;
+        }
+        .nav-container .hamburger-lines {
+          display: block;
+        }
+        
         .nav-container .hamburger-lines .line {
           display: block;
+          height: 4px;
+          border-radius: 10px;
+          background: #0e2431;
         }
 
         .navbar .menu-items {
